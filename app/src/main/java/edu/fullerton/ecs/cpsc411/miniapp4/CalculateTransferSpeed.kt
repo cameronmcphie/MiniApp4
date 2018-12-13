@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProviders
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import edu.fullerton.ecs.cpsc411.miniapp4.CalculateTransferSpeedViewModel
 import edu.fullerton.ecs.cpsc411.miniapp4.databinding.ActivityCalculateTransferSpeedBinding
 
 
