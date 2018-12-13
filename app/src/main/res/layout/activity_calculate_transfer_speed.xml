@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-        <variable
-                name="fileSize"
-                type="Double" />
-
-        <variable
-                name="transferSpeed"
-                type="Double" />
-
-        <variable
-                name="transferTime"
-                type="Double" />
 
         <variable
                 name="viewModel"
@@ -33,10 +22,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/file_size"/>
 
-        <!--TODO: on change value or something-->
+
         <EditText
                 android:id="@+id/fileValue"
-                android:text="@{viewModel.fileSize}"
+                android:text="@={viewModel.fileSize}"
+                android:onTextChanged="@{() -> viewModel.onSpeedOnChanged()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -51,7 +41,8 @@
 
         <EditText
                 android:id="@+id/speedValue"
-                android:text="@{viewModel.networkSpeed}"
+                android:text="@={viewModel.networkSpeed}"
+                android:onTextChanged="@{() -> viewModel.onSpeedOnChanged()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -67,7 +58,7 @@
 
         <TextView
                 android:id="@+id/transferSpeedValue"
-                android:text="@{viewModel.transferSpeed}"
+                android:text="@{String.valueOf(viewModel.transferSpeed)}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"/>
