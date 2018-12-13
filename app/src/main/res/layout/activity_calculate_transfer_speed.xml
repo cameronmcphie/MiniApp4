@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+                name="fileSize"
+                type="Double" />
+
+        <variable
+                name="transferSpeed"
+                type="Double" />
+
+        <variable
+                name="transferTime"
+                type="Double" />
+
+        <variable
+                name="viewModel"
+                type="edu.fullerton.ecs.cpsc411.miniapp4.CalculateTransferSpeedViewModel" />
+
+    </data>
+
+    <LinearLayout
+            android:id="@+id/calculatetransferspeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="top"
+            android:layout_margin="16dp">
+
+        <TextView
+                android:id="@+id/fileSizeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/file_size"/>
+
+        <!--TODO: on change value or something-->
+        <EditText
+                android:id="@+id/fileValue"
+                android:text="@{viewModel.fileSize}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/size_hint"
+                android:inputType="number"/>
+        <TextView
+                android:id="@+id/transferSpeedLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/network_speed"
+                android:textSize="14sp"/>
+
+        <EditText
+                android:id="@+id/speedValue"
+                android:text="@{viewModel.networkSpeed}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/speed_hint"
+                android:inputType="number"/>
+
+        <TextView
+                android:id="@+id/speedLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_label"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/transferSpeedValue"
+                android:text="@{viewModel.transferSpeed}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"/>
+
+    </LinearLayout>
+</layout>
