@@ -2,6 +2,7 @@ package edu.fullerton.ecs.cpsc411.miniapp4
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableDouble
+import java.text.DecimalFormat
 
 class CalculateTransferSpeedViewModel : ViewModel() {
     var fileSize  = ""
@@ -16,7 +17,12 @@ class CalculateTransferSpeedViewModel : ViewModel() {
             fs *= Math.pow(2.0, 20.0) * 8.0
             ns *= Math.pow(10.0, 6.0)
 
-            transferSpeed.set(fs / ns)
+            val oneDecPlace ="%.1f".format(fs /ns)
+
+            transferSpeed.set(oneDecPlace.toDouble())
+        }
+        else {
+            transferSpeed.set(0.0)
         }
     }
 }
